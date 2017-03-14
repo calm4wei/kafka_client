@@ -29,7 +29,8 @@ public class KafkaUtil {
     public static KafkaProducer<String, String> getProducer() {
         if (kp == null) {
             Properties props = new Properties();
-            props.put("bootstrap.servers", "datacube154:6667,datacube151:6667");
+            props.put("bootstrap.servers", "datacube201:9092");
+            props.put("metadata.broker.list", "datacube201:9092");
             props.put("acks", "1");
             props.put("retries", 0);
             props.put("batch.size", 16384);
@@ -44,7 +45,7 @@ public class KafkaUtil {
     public static KafkaProducer<String, String> getAuthKerberosProducer() {
         if (kp == null) {
             Properties props = new Properties();
-            props.put("bootstrap.servers", "192.168.1.203:9092");
+            props.put("bootstrap.servers", "datacube201:9092");
             props.put("acks", "1");
             props.put("retries", 0);
             props.put("batch.size", 16384);
@@ -74,7 +75,7 @@ public class KafkaUtil {
     public static KafkaConsumer<String, String> getConsumer() {
         if (kc == null) {
             Properties props = new Properties();
-            props.put("bootstrap.servers", "datacube154:6667,datacube151:6667");
+            props.put("bootstrap.servers", "datacube201:9092");
             props.put("group.id", "test-consumer-group");
             props.put("enable.auto.commit", "true");
             props.put("auto.commit.interval.ms", "1000");
