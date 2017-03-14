@@ -40,6 +40,6 @@ public class BeanSerializer implements org.apache.kafka.common.serialization.Ser
     }
 
     public void close() {
-
     }
+
 }
