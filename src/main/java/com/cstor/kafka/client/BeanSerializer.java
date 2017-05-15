@@ -23,7 +23,6 @@ public class BeanSerializer implements org.apache.kafka.common.serialization.Ser
             baos = new ByteArrayOutputStream();
             oos = new ObjectOutputStream(baos);
             oos.writeObject(data);
-            System.out.println("serialize=" + data);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
